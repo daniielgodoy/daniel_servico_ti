@@ -33,6 +33,7 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarRegistrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioOrçamentalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(523, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -51,7 +52,8 @@
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.atualizarRegistrosToolStripMenuItem,
-            this.apagarRegistrosToolStripMenuItem});
+            this.apagarRegistrosToolStripMenuItem,
+            this.relatórioOrçamentalToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -61,24 +63,34 @@
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // atualizarRegistrosToolStripMenuItem
             // 
             this.atualizarRegistrosToolStripMenuItem.Name = "atualizarRegistrosToolStripMenuItem";
             this.atualizarRegistrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizarRegistrosToolStripMenuItem.Text = "Atualizar Registros";
+            this.atualizarRegistrosToolStripMenuItem.Click += new System.EventHandler(this.atualizarRegistrosToolStripMenuItem_Click);
             // 
             // apagarRegistrosToolStripMenuItem
             // 
             this.apagarRegistrosToolStripMenuItem.Name = "apagarRegistrosToolStripMenuItem";
             this.apagarRegistrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.apagarRegistrosToolStripMenuItem.Text = "Apagar Registros";
+            this.apagarRegistrosToolStripMenuItem.Click += new System.EventHandler(this.apagarRegistrosToolStripMenuItem_Click);
+            // 
+            // relatórioOrçamentalToolStripMenuItem
+            // 
+            this.relatórioOrçamentalToolStripMenuItem.Name = "relatórioOrçamentalToolStripMenuItem";
+            this.relatórioOrçamentalToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.relatórioOrçamentalToolStripMenuItem.Text = "Relatório Orçamental";
+            this.relatórioOrçamentalToolStripMenuItem.Click += new System.EventHandler(this.relatórioOrçamentalToolStripMenuItem_Click);
             // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(523, 233);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "menu";
@@ -97,5 +109,6 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atualizarRegistrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarRegistrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatórioOrçamentalToolStripMenuItem;
     }
 }

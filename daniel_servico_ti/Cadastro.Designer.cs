@@ -37,7 +37,6 @@
             this.textBoxQUEIXA = new System.Windows.Forms.TextBox();
             this.textBoxOBS = new System.Windows.Forms.TextBox();
             this.textBoxORC = new System.Windows.Forms.TextBox();
-            this.textBoxDATA = new System.Windows.Forms.TextBox();
             this.textBoxVIDEO = new System.Windows.Forms.TextBox();
             this.textBoxRAM = new System.Windows.Forms.TextBox();
             this.textBoxFONTE = new System.Windows.Forms.TextBox();
@@ -57,7 +56,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonSALVAR = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridViewTOP = new System.Windows.Forms.DataGridView();
+            this.buttonVOLTAR = new System.Windows.Forms.Button();
+            this.textBoxDATA = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTOP)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,13 +87,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Controls.Add(this.textBoxDATA);
             this.panel1.Controls.Add(this.comboBoxSTATUS);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.textBoxACESS);
             this.panel1.Controls.Add(this.textBoxQUEIXA);
             this.panel1.Controls.Add(this.textBoxOBS);
             this.panel1.Controls.Add(this.textBoxORC);
-            this.panel1.Controls.Add(this.textBoxDATA);
             this.panel1.Controls.Add(this.textBoxVIDEO);
             this.panel1.Controls.Add(this.textBoxRAM);
             this.panel1.Controls.Add(this.textBoxFONTE);
@@ -126,7 +130,8 @@
             this.comboBoxSTATUS.Location = new System.Drawing.Point(49, 260);
             this.comboBoxSTATUS.Name = "comboBoxSTATUS";
             this.comboBoxSTATUS.Size = new System.Drawing.Size(245, 21);
-            this.comboBoxSTATUS.TabIndex = 28;
+            this.comboBoxSTATUS.TabIndex = 29;
+            this.comboBoxSTATUS.Text = "Aberto";
             // 
             // label11
             // 
@@ -167,13 +172,6 @@
             this.textBoxORC.Name = "textBoxORC";
             this.textBoxORC.Size = new System.Drawing.Size(228, 20);
             this.textBoxORC.TabIndex = 21;
-            // 
-            // textBoxDATA
-            // 
-            this.textBoxDATA.Location = new System.Drawing.Point(92, 293);
-            this.textBoxDATA.Name = "textBoxDATA";
-            this.textBoxDATA.Size = new System.Drawing.Size(202, 20);
-            this.textBoxDATA.TabIndex = 20;
             // 
             // textBoxVIDEO
             // 
@@ -256,9 +254,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(5, 295);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 13);
+            this.label17.Size = new System.Drawing.Size(147, 13);
             this.label17.TabIndex = 9;
-            this.label17.Text = "Data de Entrada";
+            this.label17.Text = "Data Entrada (AAAA-MM-DD)";
             // 
             // label6
             // 
@@ -328,17 +326,58 @@
             // 
             this.buttonSALVAR.Location = new System.Drawing.Point(12, 583);
             this.buttonSALVAR.Name = "buttonSALVAR";
-            this.buttonSALVAR.Size = new System.Drawing.Size(305, 32);
+            this.buttonSALVAR.Size = new System.Drawing.Size(146, 32);
             this.buttonSALVAR.TabIndex = 3;
             this.buttonSALVAR.Text = "Salvar";
             this.buttonSALVAR.UseVisualStyleBackColor = true;
             this.buttonSALVAR.Click += new System.EventHandler(this.buttonSALVAR_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(171, 583);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 32);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Limpar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridViewTOP
+            // 
+            this.dataGridViewTOP.AllowUserToAddRows = false;
+            this.dataGridViewTOP.AllowUserToDeleteRows = false;
+            this.dataGridViewTOP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTOP.Location = new System.Drawing.Point(323, 52);
+            this.dataGridViewTOP.Name = "dataGridViewTOP";
+            this.dataGridViewTOP.ReadOnly = true;
+            this.dataGridViewTOP.Size = new System.Drawing.Size(502, 525);
+            this.dataGridViewTOP.TabIndex = 5;
+            // 
+            // buttonVOLTAR
+            // 
+            this.buttonVOLTAR.Location = new System.Drawing.Point(750, 12);
+            this.buttonVOLTAR.Name = "buttonVOLTAR";
+            this.buttonVOLTAR.Size = new System.Drawing.Size(75, 23);
+            this.buttonVOLTAR.TabIndex = 6;
+            this.buttonVOLTAR.Text = "Voltar";
+            this.buttonVOLTAR.UseVisualStyleBackColor = true;
+            this.buttonVOLTAR.Click += new System.EventHandler(this.buttonVOLTAR_Click);
+            // 
+            // textBoxDATA
+            // 
+            this.textBoxDATA.Location = new System.Drawing.Point(158, 292);
+            this.textBoxDATA.Name = "textBoxDATA";
+            this.textBoxDATA.Size = new System.Drawing.Size(136, 20);
+            this.textBoxDATA.TabIndex = 30;
+            // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 629);
+            this.ClientSize = new System.Drawing.Size(854, 629);
+            this.Controls.Add(this.buttonVOLTAR);
+            this.Controls.Add(this.dataGridViewTOP);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSALVAR);
             this.Controls.Add(this.panel1);
             this.Name = "Cadastro";
@@ -346,6 +385,7 @@
             this.Load += new System.EventHandler(this.Cadastro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTOP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,7 +406,6 @@
         private System.Windows.Forms.TextBox textBoxQUEIXA;
         private System.Windows.Forms.TextBox textBoxOBS;
         private System.Windows.Forms.TextBox textBoxORC;
-        private System.Windows.Forms.TextBox textBoxDATA;
         private System.Windows.Forms.TextBox textBoxVIDEO;
         private System.Windows.Forms.TextBox textBoxRAM;
         private System.Windows.Forms.TextBox textBoxFONTE;
@@ -379,8 +418,12 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button buttonSALVAR;
-        private System.Windows.Forms.ComboBox comboBoxSTATUS;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxSTATUS;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridViewTOP;
+        private System.Windows.Forms.Button buttonVOLTAR;
+        private System.Windows.Forms.TextBox textBoxDATA;
     }
 }
 

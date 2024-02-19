@@ -16,5 +16,37 @@ namespace daniel_servico_ti
         {
             InitializeComponent();
         }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form TelaMenu = new Cadastro();
+            TelaMenu.FormClosed += (s, args) => this.Close();
+            TelaMenu.Show();
+        }
+
+        private void atualizarRegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form TelaMenu = new Update();
+            TelaMenu.FormClosed += (s, args) => this.Close();
+            TelaMenu.Show();
+        }
+
+        private void apagarRegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form TelaMenu = new Deletar();
+            TelaMenu.FormClosed += (s, args) => this.Close();
+            TelaMenu.Show();
+        }
+
+        private void relatórioOrçamentalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form TelaMenu = new Relatorio();
+            TelaMenu.FormClosed += (s, args) => this.Close();
+            TelaMenu.Show();
+        }
     }
 }

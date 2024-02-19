@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTOP = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBoxBUSCA = new System.Windows.Forms.TextBox();
             this.buttonUPDATE = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxSTATUS = new System.Windows.Forms.ComboBox();
@@ -39,7 +39,6 @@
             this.textBoxQUEIXA = new System.Windows.Forms.TextBox();
             this.textBoxOBS = new System.Windows.Forms.TextBox();
             this.textBoxORC = new System.Windows.Forms.TextBox();
-            this.textBoxDATA = new System.Windows.Forms.TextBox();
             this.textBoxVIDEO = new System.Windows.Forms.TextBox();
             this.textBoxRAM = new System.Windows.Forms.TextBox();
             this.textBoxFONTE = new System.Windows.Forms.TextBox();
@@ -60,34 +59,41 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonBUSCAR = new System.Windows.Forms.Button();
+            this.buttonVOLTAR = new System.Windows.Forms.Button();
+            this.textBoxDATA = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTOP)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewTOP
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(323, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(502, 525);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridViewTOP.AllowUserToAddRows = false;
+            this.dataGridViewTOP.AllowUserToDeleteRows = false;
+            this.dataGridViewTOP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTOP.Location = new System.Drawing.Point(323, 81);
+            this.dataGridViewTOP.Name = "dataGridViewTOP";
+            this.dataGridViewTOP.ReadOnly = true;
+            this.dataGridViewTOP.Size = new System.Drawing.Size(502, 496);
+            this.dataGridViewTOP.TabIndex = 4;
+            this.dataGridViewTOP.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewTOP_CellMouseDoubleClick);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(323, 27);
+            this.label10.Location = new System.Drawing.Point(323, 48);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(135, 16);
             this.label10.TabIndex = 5;
             this.label10.Text = "Procurar por nome";
             // 
-            // textBox13
+            // textBoxBUSCA
             // 
-            this.textBox13.Location = new System.Drawing.Point(464, 27);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(361, 20);
-            this.textBox13.TabIndex = 6;
+            this.textBoxBUSCA.Location = new System.Drawing.Point(464, 48);
+            this.textBoxBUSCA.Name = "textBoxBUSCA";
+            this.textBoxBUSCA.Size = new System.Drawing.Size(280, 20);
+            this.textBoxBUSCA.TabIndex = 6;
             // 
             // buttonUPDATE
             // 
@@ -97,17 +103,18 @@
             this.buttonUPDATE.TabIndex = 7;
             this.buttonUPDATE.Text = "Atualizar";
             this.buttonUPDATE.UseVisualStyleBackColor = true;
+            this.buttonUPDATE.Click += new System.EventHandler(this.buttonUPDATE_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Controls.Add(this.textBoxDATA);
             this.panel1.Controls.Add(this.comboBoxSTATUS);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.textBoxACESS);
             this.panel1.Controls.Add(this.textBoxQUEIXA);
             this.panel1.Controls.Add(this.textBoxOBS);
             this.panel1.Controls.Add(this.textBoxORC);
-            this.panel1.Controls.Add(this.textBoxDATA);
             this.panel1.Controls.Add(this.textBoxVIDEO);
             this.panel1.Controls.Add(this.textBoxRAM);
             this.panel1.Controls.Add(this.textBoxFONTE);
@@ -184,13 +191,6 @@
             this.textBoxORC.Name = "textBoxORC";
             this.textBoxORC.Size = new System.Drawing.Size(228, 20);
             this.textBoxORC.TabIndex = 21;
-            // 
-            // textBoxDATA
-            // 
-            this.textBoxDATA.Location = new System.Drawing.Point(92, 290);
-            this.textBoxDATA.Name = "textBoxDATA";
-            this.textBoxDATA.Size = new System.Drawing.Size(202, 20);
-            this.textBoxDATA.TabIndex = 20;
             // 
             // textBoxVIDEO
             // 
@@ -273,9 +273,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(5, 292);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 13);
+            this.label17.Size = new System.Drawing.Size(147, 13);
             this.label17.TabIndex = 9;
-            this.label17.Text = "Data de Entrada";
+            this.label17.Text = "Data Entrada (AAAA-MM-DD)";
             // 
             // label6
             // 
@@ -359,19 +359,48 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
+            // buttonBUSCAR
+            // 
+            this.buttonBUSCAR.Location = new System.Drawing.Point(750, 46);
+            this.buttonBUSCAR.Name = "buttonBUSCAR";
+            this.buttonBUSCAR.Size = new System.Drawing.Size(75, 23);
+            this.buttonBUSCAR.TabIndex = 9;
+            this.buttonBUSCAR.Text = "Buscar";
+            this.buttonBUSCAR.UseVisualStyleBackColor = true;
+            this.buttonBUSCAR.Click += new System.EventHandler(this.buttonBUSCAR_Click);
+            // 
+            // buttonVOLTAR
+            // 
+            this.buttonVOLTAR.Location = new System.Drawing.Point(750, 12);
+            this.buttonVOLTAR.Name = "buttonVOLTAR";
+            this.buttonVOLTAR.Size = new System.Drawing.Size(75, 23);
+            this.buttonVOLTAR.TabIndex = 10;
+            this.buttonVOLTAR.Text = "Voltar";
+            this.buttonVOLTAR.UseVisualStyleBackColor = true;
+            this.buttonVOLTAR.Click += new System.EventHandler(this.buttonVOLTAR_Click);
+            // 
+            // textBoxDATA
+            // 
+            this.textBoxDATA.Location = new System.Drawing.Point(158, 289);
+            this.textBoxDATA.Name = "textBoxDATA";
+            this.textBoxDATA.Size = new System.Drawing.Size(136, 20);
+            this.textBoxDATA.TabIndex = 31;
+            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 642);
+            this.Controls.Add(this.buttonVOLTAR);
+            this.Controls.Add(this.buttonBUSCAR);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonUPDATE);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.textBoxBUSCA);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewTOP);
             this.Name = "Update";
             this.Text = "Update";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTOP)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -380,18 +409,16 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewTOP;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBoxBUSCA;
         private System.Windows.Forms.Button buttonUPDATE;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxSTATUS;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxACESS;
         private System.Windows.Forms.TextBox textBoxQUEIXA;
         private System.Windows.Forms.TextBox textBoxOBS;
         private System.Windows.Forms.TextBox textBoxORC;
-        private System.Windows.Forms.TextBox textBoxDATA;
         private System.Windows.Forms.TextBox textBoxVIDEO;
         private System.Windows.Forms.TextBox textBoxRAM;
         private System.Windows.Forms.TextBox textBoxFONTE;
@@ -412,5 +439,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxSTATUS;
+        private System.Windows.Forms.Button buttonBUSCAR;
+        private System.Windows.Forms.Button buttonVOLTAR;
+        private System.Windows.Forms.TextBox textBoxDATA;
     }
 }

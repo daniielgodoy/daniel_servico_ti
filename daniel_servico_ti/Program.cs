@@ -16,7 +16,7 @@ namespace daniel_servico_ti
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cadastro());
+            Application.Run(new menu());
         }
     }
 }
